@@ -1,0 +1,117 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6em 2.4em 2.4em 2em;
+
+    .hamburger-logo-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: .3em;
+                cursor: pointer;
+
+                .line {
+                    background-color: $dark-grayis-blue;
+                    width: 1.6em;
+                    height: .3em;
+                }
+            }
+
+            .menu {
+                background-color: $black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100vh;
+
+                .slide-menu {
+                    background-color: $white;
+                    height: 100%;
+                    width: 66vw;
+                    padding: 2.3em;
+
+                    img {
+                        transition: transform 0.5s ease;
+
+                        &:hover {
+                            cursor: pointer;
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        margin-top: 5em;
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2.3em;
+
+                        a, :active, :visited {
+                            color: $very-vark-blue;
+                            text-decoration: none;
+
+                            &:hover {
+                                text-decoration: underline;
+                                opacity: .75;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .hidden {
+                display: none;
+            }
+    }
+
+    .card-avatar-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.2em;
+        padding: 2em;
+
+        .btnCart {
+            cursor: pointer;
+            position: relative;
+
+            .cart-count {
+                position: absolute;
+                top: -25%;
+                right: -25%;
+                background-color: $orange;
+                color: $white;
+
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 100%;
+
+                padding: .1em .6em;
+                border-radius: 1rem;
+            }
+        }
+
+        .avatar {
+            width: 2.5em;
+            cursor: pointer;
+            border: 2px solid transparent;
+
+            &:hover {
+                border: 2px solid $orange;
+                border-radius: 50%;
+            }
+        }
+    }
+
+}
