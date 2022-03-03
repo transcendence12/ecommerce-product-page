@@ -442,4 +442,56 @@ header .hidden {
           filter: brightness(300%);
   height: 1.5rem;
 }
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 78%;
+    margin: 0 auto;
+  }
+  header {
+    padding: 0;
+    border-bottom: 1px solid #b6bcc8;
+  }
+  header .hamburger-logo-group {
+    gap: 5.5rem;
+  }
+  header .hamburger-logo-group .hamburger {
+    display: none;
+  }
+  header .hamburger-logo-group .menu {
+    display: block;
+    position: unset;
+    height: unset;
+  }
+  header .hamburger-logo-group .menu .slide-menu {
+    width: unset;
+    padding: 0;
+  }
+  header .hamburger-logo-group .menu .slide-menu img {
+    display: none;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #68707d;
+    gap: 3.4rem;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul a {
+    display: block;
+    padding: 4rem 0;
+    border-bottom: 3px solid transparent;
+  }
+  header .hamburger-logo-group .menu .slide-menu ul a:hover, header .hamburger-logo-group .menu .slide-menu ul a:focus {
+    color: #1d2025;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 3px solid #ff7d1a;
+    cursor: pointer;
+  }
+}
 /*# sourceMappingURL=style.css.map */

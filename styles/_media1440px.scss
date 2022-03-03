@@ -1,0 +1,57 @@
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 78%;
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 0;
+        border-bottom: 1px solid $grayish-blue;
+
+        .hamburger-logo-group {
+            gap: 5.5rem;
+
+            .hamburger {
+                display: none;
+            }
+    
+            .menu {
+                display: block;
+                position: unset;
+                height: unset;
+    
+                .slide-menu {
+                    width: unset;
+                    padding: 0;
+    
+                    img {
+                        display: none;
+                    }
+
+                    ul {
+                        flex-direction: row;
+                        margin: 0;
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: $dark-grayis-blue;
+                        gap: 3.4rem;
+
+                        a {
+                            display: block;
+                            padding: 4rem 0;
+                            border-bottom: 3px solid transparent;
+
+                            &:hover, &:focus {
+                                color: $very-vark-blue;
+                                text-decoration: none;
+                                font-weight: 700;
+                                border-bottom: 3px solid $orange;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
