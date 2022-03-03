@@ -71,6 +71,7 @@ header .hamburger-logo-group .menu {
   left: 0;
   right: 0;
   height: 100vh;
+  z-index: 10;
 }
 
 header .hamburger-logo-group .menu .slide-menu {
@@ -259,6 +260,7 @@ header .hidden {
 
 .lightbox {
   position: relative;
+  z-index: -1;
 }
 
 .lightbox .product-hero {

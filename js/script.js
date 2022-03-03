@@ -10,6 +10,9 @@ const cart = document.querySelector(".cart")
 hamburgerBtn.addEventListener("click", onHamburgerClick)
 closeBtn.addEventListener("click", onCloseClick)
 
+// Product in cart
+btnCart.addEventListener("click", openCartWhenClicked)
+
 function onHamburgerClick() {
     menu.classList.remove("hidden")
 }
@@ -20,8 +23,6 @@ function onCloseClick() {
 
 // Product in cart - when cart is closed .toggle() method make it open.
 // when cart is open .toggle() method makes it closed.
-
-btnCart.addEventListener("click", openCartWhenClicked)
 
 function openCartWhenClicked() {
     cart.classList.toggle("hidden")

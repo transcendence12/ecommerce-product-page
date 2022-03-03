@@ -1,5 +1,6 @@
 .lightbox {
     position: relative;
+    z-index: -1; // Something wrong is with lightbox when I remove z-index: -1; It appears on top the hamburger when open!
 
     .product-hero {
         width: 100%;
@@ -30,7 +31,6 @@
         border-radius: 50%;
         width: 4rem;
         height: 4rem;
-
         display: flex;
         align-items: center;
         justify-content: center;
