@@ -4,6 +4,8 @@ header {
     align-items: center;
     padding: 1.6em 2.4em 2.4em 2em;
 
+    position: relative;
+
     .hamburger-logo-group {
         display: flex;
         align-items: center;
@@ -112,6 +114,94 @@ header {
                 border-radius: 50%;
             }
         }
+    }
+
+    .cart {
+        position: absolute;
+        right: 1rem;
+        top: calc(calc(100%) + 1rem);
+        z-index: 1;
+        background-color: $white;
+        width: 35.5rem; // 1rem + 35.5rem + 1rem => 375px
+        border-radius: 1rem;
+
+        .cart-header {
+            border-bottom: 1px solid $grayish-blue;
+            padding: 2.4rem 2rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .products-in-cart {
+
+
+            .item {
+                margin: 2.4rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .product-img {
+                    width: 5rem;
+                    border-radius: .5rem;
+                }
+
+                .details {
+                    color: $dark-grayis-blue;
+                    font-size: 1.6rem;
+                    line-height: 2.6rem;
+
+                    .price-group {
+                        display: flex;
+                        gap: .6rem;
+
+                        .total-amount {
+                            font-weight: 700;
+                            font-size: 1.7rem;
+                            color: $black;
+                        }
+                    }
+                }
+
+                #btnDelete {
+                    padding: .5rem;
+                    border-radius: .5rem;
+
+                    &:hover, &:focus {
+                        cursor: pointer;
+                        background-color: $pale-orange;
+                    }
+                }
+            }
+        }
+
+        .msg-empty {
+            color: $dark-grayis-blue;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 7.8rem 0;
+        }
+
+        .checkout {
+            background-color: $orange;
+            color: $white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 1.8rem;
+            border-radius: 1rem;
+            margin: 2.4rem;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    }
+
+    .hidden {
+        display: none;
     }
 
 }
