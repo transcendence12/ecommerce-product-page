@@ -526,5 +526,85 @@ header .hidden {
   .lightbox .previous, .lightbox .next {
     display: none;
   }
+  .lightbox .thumb-gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 3rem;
+  }
+  .lightbox .thumb-gallery .pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 20%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+  }
+  .lightbox .thumb-gallery .pic img {
+    width: 100%;
+  }
+  .lightbox .thumb-gallery .pic img:hover, .lightbox .thumb-gallery .pic img:focus {
+    opacity: .75;
+  }
+  .lightbox .thumb-gallery .active {
+    border: 2px solid #ff7d1a;
+  }
+  .lightbox .thumb-gallery .active img {
+    opacity: .5;
+  }
+  .product {
+    width: 100%;
+    padding: 3rem 0 3rem 3rem;
+  }
+  .product .title {
+    font-size: 4.4rem;
+    margin-top: 1.8rem;
+  }
+  .product .description {
+    margin-top: 3.5rem;
+    font-size: 1.6rem;
+  }
+  .product .price-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: .8rem;
+    margin-top: 2.4rem;
+  }
+  .product .count-btn-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .product .count-btn-group .counter-container {
+    width: 62%;
+    border-radius: 1rem;
+    padding: 1.2rem .5rem;
+  }
+  .product .count-btn-group .btn {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
