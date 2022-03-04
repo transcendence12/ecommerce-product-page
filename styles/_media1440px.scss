@@ -1,4 +1,4 @@
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
     .container {
         width: 78%;
         margin: 0 auto;
@@ -52,6 +52,40 @@
                     }
                 }
             }
+        }
+
+        .card-avatar-group {
+            padding: 4.5rem;
+
+            .avatar {
+                width: 5rem;
+            }
+
+        }
+
+        .cart {
+            right: - 7rem;
+            top: 90%;
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10rem;
+        padding: 9rem 5rem;
+    }
+
+    .lightbox {
+        width: 100%;
+
+        .product-hero {
+            border-radius: 1.5rem;
+        }
+
+        .previous, .next {
+            display: none;
         }
     }
 }
