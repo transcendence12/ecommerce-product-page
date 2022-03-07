@@ -10,6 +10,8 @@ const productCounter = document.querySelector(".counter")
 
 let productCounterValue = 1
 
+const gallery = document.querySelectorAll(".pic")
+
 
 
 // Hamburger Menu
@@ -22,6 +24,10 @@ btnCart.addEventListener("click", openCartWhenClicked)
 //Increment or decrement the counter
 btnPlus.addEventListener("click", productCounterIncrement)
 btnMinus.addEventListener("click", productCounterDecrement)
+
+for (let i = 0; i < gallery.length; i++) {
+    gallery[i].addEventListener("click", onThumbClick)
+}
 
 function onHamburgerClick() {
     menu.classList.remove("hidden")
@@ -51,4 +57,13 @@ function setProductCounterValue(value) {
         productCounterValue += value
         productCounter.textContent = productCounterValue
     }
+}
+
+function onThumbClick() {
+    //remove active state from all thumbs
+     gallery.forEach(img => {
+         img.classList.remove("active")
+     })
+    //set activ thumb
+
 }
