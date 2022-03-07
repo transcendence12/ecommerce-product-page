@@ -24,6 +24,9 @@ const productInShoppingCart = document.querySelector(".products-in-cart")
 let price = 250.00
 let discount = 0.5
 
+const msgEmpty = document.querySelector(".msg-empty")
+const checkout = document.querySelector(".checkout")
+
 
 
 // Hamburger Menu
@@ -131,23 +134,31 @@ function addToCart() {
         <img class="product-img" src="./images/image-product-1-thumbnail.jpg" alt="product 1 thumbnail">
 
         <div class="details">
-        <div class="product-name">Autumn Limited Edition...</div>
-        <div class="price-group">
-            <div class="price">$${price*discount}</div> x
-            <div class="count">${productsInCart}</div>
-            <div class="total-amount">$${price*discount*productsInCart}</div>
+            <div class="product-name">Autumn Limited Edition...</div>
+            <div class="price-group">
+                <div class="price">$${(price*discount).toFixed(2)}</div> x
+                <div class="count">${productsInCart}</div>
+                <div class="total-amount">$${(price*discount*productsInCart).toFixed(2)}</div>
+            </div>
         </div>
+        <img id="btnDelete" src="./images/icon-delete.svg" alt="icon delete">
     </div>
     `
 
     productInShoppingCart.innerHTML = productHTMLElement
 
     updateCart()
+
+    const btnDelete = document.querySelector("#btnDelete")
+    btnDelete.addEventListener("click", onBtnDeleteClick)
+
     // console.log(productsInCart)
 }
 
 function updateCart() {
     updateCartIcon()
+    updateMsgEmpty()
+    updateCheckoutButton()
 }
 
 function updateCartIcon() {
@@ -158,5 +169,41 @@ function updateCartIcon() {
         }
     } else {
         cartCount.classList.remove("hidden")
+    }
+}
+
+function updateMsgEmpty() {
+    if (productsInCart === 0) {
+        if (msgEmpty.classList.contains("hidden")) {
+            msgEmpty.classList.remove("hidden")
+        }
+    } else {
+        if (!msgEmpty.classList.contains("hidden")) {
+            msgEmpty.classList.add("hidden")
+        }
+    }
+}
+
+function updateCheckoutButton() {
+    if (productsInCart === 0) {
+        if (!checkout.classList.contains(".hidden")) {
+            checkout.classList.add(".hidden")
+        }
+    } else {
+        checkout.classList.remove(".hidden")
+    }
+}
+
+function onBtnDeleteClick() {
+    productsInCart--
+    updateCart()
+
+    const el = document.querySelector(".count")
+    const totalAmount = document.querySelector(".total-amount")
+    el.innerHTML = productsInCart
+    totalAmount.innerHTML = `$${(price*discount*productsInCart).toFixed(2)}`
+
+    if (productInShoppingCart === 0) {
+        cart.innerHTML = ""
     }
 }
