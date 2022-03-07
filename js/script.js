@@ -14,6 +14,15 @@ const gallery = document.querySelectorAll(".pic")
 const heroImg = document.querySelector(".product-hero")
 const btnNext = document.querySelector(".next")
 const btnPrevious = document.querySelector(".previous")
+const btnAddToCard = document.querySelector(".btn")
+
+let productsInCart = 0
+
+const cartCount = document.querySelector(".cart-count")
+const productInShoppingCart = document.querySelector(".products-in-cart")
+
+let price = 250.00
+let discount = 0.5
 
 
 
@@ -34,6 +43,11 @@ for (let i = 0; i < gallery.length; i++) {
 
 btnNext.addEventListener("click", handleBtnClickNext)
 btnPrevious.addEventListener("click", handleBtnClickPrevious)
+
+btnAddToCard.addEventListener("click", addToCart)
+
+
+
 
 function onHamburgerClick() {
     menu.classList.remove("hidden")
@@ -107,4 +121,42 @@ function setHeroImage(imageIndex) {
     })
     // set active thumbnail
     gallery[imageIndex-1].classList.add("active")
+}
+
+function addToCart() {
+    productsInCart += productCounterValue
+
+    const productHTMLElement = `
+    <div class="item">
+        <img class="product-img" src="./images/image-product-1-thumbnail.jpg" alt="product 1 thumbnail">
+
+        <div class="details">
+        <div class="product-name">Autumn Limited Edition...</div>
+        <div class="price-group">
+            <div class="price">$${price*discount}</div> x
+            <div class="count">${productsInCart}</div>
+            <div class="total-amount">$${price*discount*productsInCart}</div>
+        </div>
+    </div>
+    `
+
+    productInShoppingCart.innerHTML = productHTMLElement
+
+    updateCart()
+    // console.log(productsInCart)
+}
+
+function updateCart() {
+    updateCartIcon()
+}
+
+function updateCartIcon() {
+    cartCount.textContent = productsInCart
+    if (productsInCart === 0) {
+        if (!productsInCart.classList.contains("hidden")) {
+            cartCount.classList.add("hidden")
+        }
+    } else {
+        cartCount.classList.remove("hidden")
+    }
 }
