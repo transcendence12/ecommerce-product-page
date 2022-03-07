@@ -11,6 +11,7 @@ const productCounter = document.querySelector(".counter")
 let productCounterValue = 1
 
 const gallery = document.querySelectorAll(".pic")
+const heroImg = document.querySelector(".product-hero")
 
 
 
@@ -59,11 +60,13 @@ function setProductCounterValue(value) {
     }
 }
 
-function onThumbClick() {
+function onThumbClick(event) {
     //remove active state from all thumbs
      gallery.forEach(img => {
          img.classList.remove("active")
      })
     //set activ thumb
-
+     event.target.parentElement.classList.add("active")
+    //  update hero image
+     heroImg.src = event.target.src
 }
