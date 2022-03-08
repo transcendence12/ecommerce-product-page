@@ -10,20 +10,20 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1em;
+        gap: 1.6rem;
 
             .hamburger {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: .3em;
+                gap: .3rem;
                 cursor: pointer;
 
                 .line {
                     background-color: $dark-grayis-blue;
-                    width: 1.6em;
-                    height: .3em;
+                    width: 1.5rem;
+                    height: .3rem;
                 }
             }
 
@@ -41,7 +41,7 @@ header {
                     background-color: $white;
                     height: 100%;
                     width: 66vw;
-                    padding: 2.3em;
+                    padding: 2.3rem;
 
                     img {
                         transition: transform 0.5s ease;
@@ -54,12 +54,12 @@ header {
 
                     ul {
                         list-style-type: none;
-                        margin-top: 5em;
+                        margin-top: 5rem;
                         font-size: 1.8rem;
                         font-weight: 700;
                         display: flex;
                         flex-direction: column;
-                        gap: 2.3em;
+                        gap: 2.3rem;
 
                         a, :active, :visited {
                             color: $very-vark-blue;
@@ -84,7 +84,7 @@ header {
         justify-content: space-between;
         align-items: center;
         gap: 2.2em;
-        padding: 2em;
+        // padding: 2em;
 
         .btnCart {
             cursor: pointer;
@@ -101,13 +101,13 @@ header {
                 font-weight: 700;
                 line-height: 100%;
 
-                padding: .1em .6em;
+                padding: .1rem .6rem;
                 border-radius: 1rem;
             }
         }
 
         .avatar {
-            width: 2.5em;
+            width: 2.5rem;
             cursor: pointer;
             border: 2px solid transparent;
 

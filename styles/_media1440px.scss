@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
     .container {
         width: 78%;
         margin: 0 auto;
@@ -19,6 +19,7 @@
                 display: block;
                 position: unset;
                 height: unset;
+                z-index: unset;
     
                 .slide-menu {
                     width: unset;

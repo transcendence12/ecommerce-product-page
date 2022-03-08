@@ -37,7 +37,7 @@ header .hamburger-logo-group {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 1em;
+  gap: 1.6rem;
 }
 
 header .hamburger-logo-group .hamburger {
@@ -54,14 +54,14 @@ header .hamburger-logo-group .hamburger {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: .3em;
+  gap: .3rem;
   cursor: pointer;
 }
 
 header .hamburger-logo-group .hamburger .line {
   background-color: #68707d;
-  width: 1.6em;
-  height: .3em;
+  width: 1.5rem;
+  height: .3rem;
 }
 
 header .hamburger-logo-group .menu {
@@ -78,7 +78,7 @@ header .hamburger-logo-group .menu .slide-menu {
   background-color: white;
   height: 100%;
   width: 66vw;
-  padding: 2.3em;
+  padding: 2.3rem;
 }
 
 header .hamburger-logo-group .menu .slide-menu img {
@@ -96,7 +96,7 @@ header .hamburger-logo-group .menu .slide-menu img:hover {
 
 header .hamburger-logo-group .menu .slide-menu ul {
   list-style-type: none;
-  margin-top: 5em;
+  margin-top: 5rem;
   font-size: 1.8rem;
   font-weight: 700;
   display: -webkit-box;
@@ -106,7 +106,7 @@ header .hamburger-logo-group .menu .slide-menu ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2.3em;
+  gap: 2.3rem;
 }
 
 header .hamburger-logo-group .menu .slide-menu ul a, header .hamburger-logo-group .menu .slide-menu ul :active, header .hamburger-logo-group .menu .slide-menu ul :visited {
@@ -134,7 +134,6 @@ header .card-avatar-group {
       -ms-flex-align: center;
           align-items: center;
   gap: 2.2em;
-  padding: 2em;
 }
 
 header .card-avatar-group .btnCart {
@@ -151,12 +150,12 @@ header .card-avatar-group .btnCart .cart-count {
   font-size: 1rem;
   font-weight: 700;
   line-height: 100%;
-  padding: .1em .6em;
+  padding: .1rem .6rem;
   border-radius: 1rem;
 }
 
 header .card-avatar-group .avatar {
-  width: 2.5em;
+  width: 2.5rem;
   cursor: pointer;
   border: 2px solid transparent;
 }
@@ -335,6 +334,7 @@ header .hidden {
   font-size: 1.5rem;
   line-height: 165%;
   color: #68707d;
+  margin-top: 1.6rem;
 }
 
 .product .price-container {
@@ -436,6 +436,8 @@ header .hidden {
   -webkit-box-shadow: 0 20px 30px 0 #ffede0;
           box-shadow: 0 20px 30px 0 #ffede0;
   cursor: pointer;
+  box-shadow: 0 20px 30px 0 #ffede0;
+  cursor: pointer;
 }
 
 .product .btn:hover, .product .btn:focus {
@@ -448,7 +450,7 @@ header .hidden {
   height: 1.5rem;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .container {
     width: 78%;
     margin: 0 auto;
@@ -467,6 +469,7 @@ header .hidden {
     display: block;
     position: unset;
     height: unset;
+    z-index: unset;
   }
   header .hamburger-logo-group .menu .slide-menu {
     width: unset;
@@ -610,5 +613,69 @@ header .hidden {
   .product .count-btn-group .btn {
     width: 100%;
   }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay .btnClose {
+  width: 57rem;
+  text-align: end;
+  padding: 2rem 0;
+}
+
+.overlay .btnClose img {
+  cursor: pointer;
+  -webkit-filter: brightness(300%);
+          filter: brightness(300%);
+}
+
+.overlay .lightbox {
+  max-width: 57rem;
+}
+
+.overlay .lightbox .next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  right: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.overlay .lightbox .previous {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.overlay .lightbox .arrow {
+  top: 40%;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

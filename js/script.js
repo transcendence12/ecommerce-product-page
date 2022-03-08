@@ -4,8 +4,8 @@ const hamburgerBtn = document.querySelector(".hamburger")
 const closeBtn = document.getElementById("close-menu")
 const btnCart = document.querySelector(".btnCart")
 const cart = document.querySelector(".cart")
-const btnMinus = document.getElementById("btnMinus")
-const btnPlus = document.getElementById("btnPlus")
+const btnMinus = document.querySelector(".btnMinus")
+const btnPlus = document.querySelector(".btnPlus")
 const productCounter = document.querySelector(".counter")
 
 let productCounterValue = 1
@@ -26,6 +26,11 @@ let discount = 0.5
 
 const msgEmpty = document.querySelector(".msg-empty")
 const checkout = document.querySelector(".checkout")
+const overlay = document.querySelector(".overlay")
+const lightbox = document.querySelector(".lightbox")
+
+let lightboxGallery
+let lightboxHero
 
 
 
@@ -48,6 +53,8 @@ btnNext.addEventListener("click", handleBtnClickNext)
 btnPrevious.addEventListener("click", handleBtnClickPrevious)
 
 btnAddToCard.addEventListener("click", addToCart)
+heroImg.addEventListener("click", onHeroImgClick)
+
 
 
 
@@ -151,8 +158,6 @@ function addToCart() {
 
     const btnDelete = document.querySelector("#btnDelete")
     btnDelete.addEventListener("click", onBtnDeleteClick)
-
-    // console.log(productsInCart)
 }
 
 function updateCart() {
@@ -186,11 +191,11 @@ function updateMsgEmpty() {
 
 function updateCheckoutButton() {
     if (productsInCart === 0) {
-        if (!checkout.classList.contains(".hidden")) {
-            checkout.classList.add(".hidden")
+        if (!checkout.classList.contains("hidden")) {
+            checkout.classList.add("hidden")
         }
     } else {
-        checkout.classList.remove(".hidden")
+        checkout.classList.remove("hidden")
     }
 }
 
@@ -203,7 +208,83 @@ function onBtnDeleteClick() {
     el.innerHTML = productsInCart
     totalAmount.innerHTML = `$${(price*discount*productsInCart).toFixed(2)}`
 
-    if (productInShoppingCart === 0) {
-        cart.innerHTML = ""
+    if (productsInCart === 0) {
+        productInShoppingCart.innerHTML = ""
     }
 }
+
+function onHeroImgClick() {
+        
+    if (window.innerWidth >= 1440) {
+        if (overlay.childElementCount === 1) {
+            const newNode = lightbox.cloneNode(true)
+            overlay.appendChild(newNode)
+            
+            const btnOverlayClose = document.querySelector("#btnOverlayClose")
+            btnOverlayClose.addEventListener("click", onBtnOverlayCloseClick)
+
+            lightboxGallery = document.querySelectorAll(".pic")
+            lightboxHero = document.querySelector(".product-hero")
+            lightboxGallery.forEach(img => {
+                img.addEventListener("click", onThumbClickLightbox)
+            })
+
+            const btnOverlayNext = document.querySelector(".next")
+            const btnOverlayPrevious = document.querySelector(".previous")
+            btnOverlayNext.addEventListener("click", handleBtnClickNextOverlay)
+            btnOverlayPrevious.addEventListener("click", handleBtnClickPreviousOverlay)
+            
+        }
+        overlay.classList.remove("hidden")
+    }
+}
+
+function onBtnOverlayCloseClick() {
+    overlay.classList.add("hidden")
+}
+
+function onThumbClickLightbox(event) {
+    //remove active state from all thumbs
+     lightboxGallery.forEach(img => {
+         img.classList.remove("active")
+     })
+    //set activ thumb
+     event.target.parentElement.classList.add("active")
+    //  update hero image
+     lightboxHero.src = event.target.src.replace("-thumbnail", "")
+}
+
+
+function handleBtnClickNextOverlay() {
+    let imageIndex = getOverlayCurrentImageIndex()
+    imageIndex++
+    if (imageIndex > 4) {
+        imageIndex = 1
+    }
+    setOverlayHeroImage(imageIndex)
+}
+
+function handleBtnClickPreviousOverlay() {
+    let imageIndex = getOverlayCurrentImageIndex()
+    imageIndex--
+    if (imageIndex < 1) {
+        imageIndex = 4
+    }
+    setOverlayHeroImage(imageIndex)
+}
+
+function getOverlayCurrentImageIndex() {
+    const imageIndex = parseInt(lightboxHero.src.split("\\").pop().split("/").pop().replace(".jpg", "").replace("image-product-", ""))
+    return imageIndex
+}
+
+function setOverlayHeroImage(imageIndex) {
+    lightboxHero.src = `./images/image-product-${imageIndex}.jpg`
+    // images are not sync
+    lightboxHeroGallery.forEach(img => {
+        img.classList.remove("active")
+    })
+    // set active thumbnail
+    lightboxHeroGallery[imageIndex-1].classList.add("active")
+}
+

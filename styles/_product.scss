@@ -21,6 +21,7 @@
         font-size: 1.5rem;
         line-height: 165%;
         color: $dark-grayis-blue;
+        margin-top: 1.6rem;
     }
 
     .price-container {
@@ -107,5 +108,8 @@
             filter: brightness(300%);
             height: 1.5rem;
         }
+
+        box-shadow: 0 20px 30px 0 $pale-orange;
+        cursor: pointer;
     }
 }
