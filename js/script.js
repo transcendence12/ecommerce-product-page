@@ -4,8 +4,8 @@ const hamburgerBtn = document.querySelector(".hamburger")
 const closeBtn = document.getElementById("close-menu")
 const btnCart = document.querySelector(".btnCart")
 const cart = document.querySelector(".cart")
-const btnMinus = document.querySelector(".btnMinus")
-const btnPlus = document.querySelector(".btnPlus")
+const btnMinus = document.querySelector("#btnMinus")
+const btnPlus = document.querySelector("#btnPlus")
 const productCounter = document.querySelector(".counter")
 
 let productCounterValue = 1
