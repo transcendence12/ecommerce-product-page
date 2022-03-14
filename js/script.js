@@ -200,7 +200,9 @@ function updateCheckoutButton() {
 }
 
 function onBtnDeleteClick() {
-    productsInCart--
+    if (productsInCart > 1) {
+        productsInCart--
+    }
     updateCart()
 
     const el = document.querySelector(".count")
