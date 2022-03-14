@@ -8,7 +8,7 @@ const btnMinus = document.querySelector("#btnMinus")
 const btnPlus = document.querySelector("#btnPlus")
 const productCounter = document.querySelector(".counter")
 
-let productCounterValue = 1
+let productCounterValue = 0
 
 const gallery = document.querySelectorAll(".pic")
 const heroImg = document.querySelector(".product-hero")
@@ -133,6 +133,8 @@ function setHeroImage(imageIndex) {
     gallery[imageIndex-1].classList.add("active")
 }
 
+// PRODUCTS IN CART
+
 function addToCart() {
     productsInCart += productCounterValue
 
@@ -169,7 +171,7 @@ function updateCart() {
 function updateCartIcon() {
     cartCount.textContent = productsInCart
     if (productsInCart === 0) {
-        if (!productsInCart.classList.contains("hidden")) {
+        if (!productInShoppingCart.classList.contains("hidden")) {
             cartCount.classList.add("hidden")
         }
     } else {
@@ -200,7 +202,7 @@ function updateCheckoutButton() {
 }
 
 function onBtnDeleteClick() {
-    if (productsInCart > 1) {
+    if (productsInCart > 0) {
         productsInCart--
     }
     updateCart()
