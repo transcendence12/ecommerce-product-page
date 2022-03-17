@@ -99,7 +99,7 @@ function onThumbClick(event) {
     //  update hero image
      heroImg.src = event.target.src.replace("-thumbnail", "")
 }
-
+// ON MOBILE:
 function handleBtnClickNext() {
     let imageIndex = getCurrentImageIndex()
     imageIndex++
@@ -217,6 +217,7 @@ function onBtnDeleteClick() {
     }
 }
 
+// OVERLAY with arrows
 function onHeroImgClick() {
         
     if (window.innerWidth >= 1440) {
@@ -227,14 +228,14 @@ function onHeroImgClick() {
             const btnOverlayClose = document.querySelector("#btnOverlayClose")
             btnOverlayClose.addEventListener("click", onBtnOverlayCloseClick)
 
-            lightboxGallery = document.querySelectorAll(".pic")
-            lightboxHero = document.querySelector(".product-hero")
+            lightboxGallery = overlay.querySelectorAll(".pic")
+            lightboxHero = overlay.querySelector(".product-hero")
             lightboxGallery.forEach(img => {
                 img.addEventListener("click", onThumbClickLightbox)
             })
-
-            const btnOverlayNext = document.querySelector(".next")
-            const btnOverlayPrevious = document.querySelector(".previous")
+            
+            const btnOverlayNext = overlay.querySelector(".next")
+            const btnOverlayPrevious = overlay.querySelector(".previous")
             btnOverlayNext.addEventListener("click", handleBtnClickNextOverlay)
             btnOverlayPrevious.addEventListener("click", handleBtnClickPreviousOverlay)
             
@@ -260,6 +261,7 @@ function onThumbClickLightbox(event) {
 
 
 function handleBtnClickNextOverlay() {
+// console.log("I am clicked!!!!")
     let imageIndex = getOverlayCurrentImageIndex()
     imageIndex++
     if (imageIndex > 4) {
@@ -285,10 +287,10 @@ function getOverlayCurrentImageIndex() {
 function setOverlayHeroImage(imageIndex) {
     lightboxHero.src = `./images/image-product-${imageIndex}.jpg`
     // images are not sync
-    lightboxHeroGallery.forEach(img => {
+    lightboxGallery.forEach(img => {
         img.classList.remove("active")
     })
     // set active thumbnail
-    lightboxHeroGallery[imageIndex-1].classList.add("active")
+    lightboxGallery[imageIndex-1].classList.add("active")
 }
 
